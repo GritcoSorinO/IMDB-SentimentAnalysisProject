@@ -1,9 +1,9 @@
 import csv
 import pandas as pd
 from preprocessing import preprocess_the_text
+from train_models import train_models
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
 
 if __name__ == '__main__':
    filepath = 'data/labeledTrainData.tsv'
@@ -33,10 +33,4 @@ if __name__ == '__main__':
    X_train = vectorizer.transform(reviews_train)
    X_test = vectorizer.transform(review_test)
 
-   rf_classifier = RandomForestClassifier(n_estimators=200)
-   print("Machine is Learning\n");
-   rf_classifier.fit(X_train, y_train)
-   score = rf_classifier.score(X_test, y_test)
-   print("Accuracy:", score)
-
-
+   train_models(X_train, X_test, y_train, y_test)

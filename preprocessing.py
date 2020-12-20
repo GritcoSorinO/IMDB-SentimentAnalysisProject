@@ -7,6 +7,7 @@ def eliminate_html_tags(review_text):
     soup = BeautifulSoup(review_text, 'html.parser')
     return soup.get_text(separator=' ')
 
+
 def eliminate_special_characters(review_text):
     pattern = r'[^a-zA-Z\s]'
     return re.sub(pattern, ' ', review_text)
