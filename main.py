@@ -7,6 +7,7 @@ from apply_cross_validation_to_models import apply_cross_validation
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 
 if __name__ == '__main__':
    filepath = 'data/labeledTrainData.tsv'
@@ -56,5 +57,14 @@ if __name__ == '__main__':
    print("KFold RandomForest")
    apply_cross_validation(X, y, rf_model)
    '''
-   print(find_the_optimal_parameters_using_GridSearch(X, y, rf_model, param_grid))
+   ##print(find_the_optimal_parameters_using_GridSearch(X, y, rf_model, param_grid))
 
+   lr_model = LogisticRegression(random_state=random_seed)
+   param_grid = {
+      'penalty': ['l2', 'none'],
+      'tol': [1e-4, 1e-5],
+      'C': [0.001,0.01, 0.1, 1.0],
+      'max_iter': [100, 200, 500]
+   }
+
+   print(find_the_optimal_parameters_using_GridSearch(X, y, lr_model, param_grid))
