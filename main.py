@@ -1,4 +1,6 @@
 
 
 if __name__ == '__main__':
-   None
+   x = 2
+   x = x + 2
+   print(x)
