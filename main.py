@@ -46,12 +46,12 @@ if __name__ == '__main__':
 
    lr_model = LogisticRegression(random_state=random_seed)
 
-   print("K-Fold cross-validation for Logistic Regression model.")
+   print("\nK-Fold cross-validation for Logistic Regression model.")
    apply_cross_validation(X, y, lr_model)
 
    rf_model = RandomForestClassifier(random_state=random_seed)
 
-   print("K-Fold cross-validation for Random Forest model.")
+   print("\nK-Fold cross-validation for Random Forest model.")
    apply_cross_validation(X, y, rf_model)
 
    '''
@@ -61,9 +61,9 @@ if __name__ == '__main__':
 
    rf_model = RandomForestClassifier(random_state=random_seed)
    param_grid = {
-      'n_estimators': [100, 200, 500, 750, 1000],
+      'n_estimators': [100, 200, 500, 1000],
       'max_features': ['auto', 'sqrt', 'log2'],
-      'max_depth': [8, 10, 15, 20],
+      'max_depth': [10, 15, 20, 30, 50],
       'criterion': ['gini', 'entropy']
    }
 
