@@ -13,10 +13,6 @@ def apply_cross_validation(X, y, model):
                              n_jobs=-1)
 
     print(scores)
-    print('Accuracy: %.4f (%.4f)' % (mean(scores), std(scores)))
+    print('Accuracy obtained by Random Forest Classifier: {:.2f}%, ({:.4f})'.format(mean(scores)*100, std(scores)))
 
     return mean(scores)
-
-
-
-
