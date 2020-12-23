@@ -10,7 +10,7 @@ def find_the_optimal_parameters_using_GridSearch(X, y,
                                cv=5,
                                scoring='accuracy',
                                n_jobs=-1,
-                               verbose=4)
+                               verbose=2)
     grid_search.fit(X, y)
 
     best_model = grid_search.best_estimator_
