@@ -20,6 +20,11 @@ Requirements:
 
 Libraries needed to be installed:
 - bs4 v.0.0.1
+- beautifulsoup4 v.4.9.3
+- soupsieve v.>1.2
+- Cython v.0.29.14
+- smart-open v.>=1.8.1
+- six v.>=1.15.0
 - gensim v.3.8.3
 - numpy v.1.18.0
 - pandas v.1.15
